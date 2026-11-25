@@ -3,7 +3,7 @@
 
 ## 1. Présentation du projet
 
-SysWatch-API est une solution de supervision système développée en Python permettant de collecter, analyser, stocker et visualiser les métriques d'un ordinateur en temps réel.
+SysWatch-API est donc une solution de supervision système développée en Python permettant de collecter, analyser, stocker et visualiser les métriques d'un ordinateur en temps réel.
 
 Les données sont enregistrées dans une base SQLite et visualisées à travers un tableau de bord Grafana.
 
@@ -13,16 +13,12 @@ Les données sont enregistrées dans une base SQLite et visualisées à travers 
 - Surveillance de la mémoire vive (RAM).
 - Surveillance de l'espace disque.
 - Mesure des opérations de lecture et d'écriture (IOPS).
-- Supervision des processus.
-- Vérification des services HTTP et TCP.
 - Surveillance de l'expiration des certificats SSL.
 - Détection automatique des dépassements de seuils.
-- Détection de croissance anormale de la mémoire.
 - Calcul du taux de disponibilité des services (SLA).
 - Journalisation des événements et incidents.
-- Rétention automatique des données.
 
-## 3. Technologies utilisées
+## 3. Composants que j'ai utilisé 
 
 - Python
 - Psutil
@@ -31,7 +27,7 @@ Les données sont enregistrées dans une base SQLite et visualisées à travers 
 - JSON
 - Git
 
-## 4. Architecture du projet
+## 4. Architecture de structure
 
     SysWatch-API/
     ├── src/
@@ -52,53 +48,14 @@ Les données sont enregistrées dans une base SQLite et visualisées à travers 
     ├── requirements.txt
     └── README.md
 
-## 5. Installation
+## 5. Architecture d'infrastructure
 
-Créer un environnement virtuel Python :
+![INFRASTRUCTURE](image.png)
 
-    python -m venv .venv
 
-Activer l'environnement virtuel sous Windows :
-
-    .\.venv\Scripts\Activate.ps1
-
-Installer les dépendances :
-
-    pip install -r requirements.txt
-
-## 6. Lancement du programme
-
-Depuis la racine du projet :
-
-    python -m src.main
-
-La collecte des métriques est effectuée toutes les cinq secondes selon la configuration actuelle.
-
-Les données sont enregistrées dans :
-
-    data/syswatch.db
-
-## 7. Configuration
-
-Le fichier config.json permet de personnaliser les paramètres de supervision.
-
-Seuils configurés par défaut :
-
-| Métrique | Seuil |
-|---|---|
-| CPU | 90 % |
-| RAM | 90 % |
-| Disque | 85 % |
-| Expiration SSL | 15 jours |
-| Rétention des données | 7 jours |
-
-## 8. Dashboard Grafana
+## 6. Dashboard Grafana
 
 Installer Grafana ainsi que le plugin SQLite Data Source (frser-sqlite-datasource).
-
-Configurer la source de données avec le chemin absolu du fichier data/syswatch.db.
-
-Importer ensuite le fichier JSON disponible dans le dossier grafana et sélectionner la source SQLite correspondante.
 
 Le dashboard contient huit panels :
 
@@ -117,24 +74,7 @@ Le dashboard contient huit panels :
 
 ![Dashboard 2](grafana/Dashboard%202.png)
 
-## 9. Base de données
 
-La base SQLite contient cinq tables principales :
-
-- host_metrics
-- disk_partitions
-- process_metrics
-- service_health
-- system_incidents
-
-## 10. Conclusion
+## 7. Conclusion
 
 SysWatch-API permet de centraliser la supervision des ressources système, de surveiller la disponibilité des services et de détecter automatiquement les anomalies grâce à une architecture modulaire.
-
-## 11. Auteur
-
-Sabri DAHMANI
-
-Projet réalisé dans le cadre d'une évaluation Python.
-
-Novembre 2026.
