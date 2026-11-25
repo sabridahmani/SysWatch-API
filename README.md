@@ -75,6 +75,19 @@ Le dashboard contient huit panels :
 ![Dashboard 2](grafana/Dashboard%202.png)
 
 
-## 7. Conclusion
+## 7. Tests de fonctionnalités
+
+Les tests automatisés ont été réalisés avec Pytest.
+
+- Collecteur : 3 tests réussis.
+- Alertes : 7 tests réussis.
+- Base SQLite : 5 tests réussis.
+
+Résultat : 15 tests réussis sur 15.
+
+![alt text](test.png)
+
+
+## 8. Conclusion
 
 SysWatch-API permet de centraliser la supervision des ressources système, de surveiller la disponibilité des services et de détecter automatiquement les anomalies grâce à une architecture modulaire.
