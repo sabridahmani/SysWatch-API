@@ -85,8 +85,7 @@ Les tests automatisés ont été réalisés avec Pytest.
 
 Résultat : 15 tests réussis sur 15.
 
-![alt text](test.png)
-
+![Résultats Pytest](grafana/test.png)
 
 ## 8. Conclusion
 
