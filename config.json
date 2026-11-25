@@ -1,0 +1,48 @@
+{
+    "collection_interval": 5,
+    "database_path": "data/syswatch.db",
+    "retention_days": 7,
+    "logging": {
+        "level": "INFO",
+        "file": "logs/app.log",
+        "max_bytes": 5242880,
+        "backup_count": 3
+    },
+    "thresholds": {
+        "cpu_pct": 90,
+        "ram_pct": 90,
+        "disk_pct": 85,
+        "ssl_days": 15,
+        "memory_growth_samples": 10
+    },
+    "processes": [
+        "python",
+        "grafana",
+        "Code"
+    ],
+    "services": [
+        {
+            "name": "Grafana",
+            "url": "http://localhost:3000/api/health",
+            "expected_status": 200,
+            "expected_json": {
+                "database": "ok"
+            }
+        }
+    ],
+    "healthcheck_timeout": 5,
+    "tcp_services": [
+        {
+            "name": "Grafana TCP",
+            "host": "localhost",
+            "port": 3000
+        }
+    ],
+    "ssl_services": [
+        {
+            "name": "Google SSL",
+            "host": "www.google.com",
+            "port": 443
+        }
+    ]
+}
